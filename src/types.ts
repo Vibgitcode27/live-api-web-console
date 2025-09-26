@@ -24,7 +24,7 @@ import {
 /**
  * the options to initiate the client, ensure apiKey is required
  */
-export type LiveClientOptions = GoogleGenAIOptions & { apiKey: string };
+export type LiveClientOptions = GoogleGenAIOptions;
 
 /** log types */
 export type StreamingLog = {
