@@ -24,7 +24,7 @@ import cn from "classnames";
 import { LiveClientOptions } from "./types";
 
 const API_KEY = process.env.REACT_APP_GEMINI_API_KEY as string;
-const USE_VERTEX_AI = process.env.REACT_APP_USE_VERTEX_AI === 'false';
+const USE_VERTEX_AI = process.env.REACT_APP_USE_VERTEX_AI === 'true';
 const PROJECT_ID = process.env.REACT_APP_GOOGLE_CLOUD_PROJECT as string;
 const LOCATION = process.env.REACT_APP_GOOGLE_CLOUD_LOCATION as string;
 
@@ -44,7 +44,7 @@ function createApiOptions(): LiveClientOptions {
       location: LOCATION,
     };
   } else {
-    if (typeof API_KEY !== "string") {
+    if (!API_KEY) {
       throw new Error("set REACT_APP_GEMINI_API_KEY in .env");
     }
     
